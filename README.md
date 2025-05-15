@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tio Setiawan - Personal Website 🌐
 
-## Getting Started
+Welcome to my personal website! This project showcases my portfolio, skills, and professional journey as a **Software Engineer**. Built with **Next.js**, this website is designed to be fast, responsive, and visually appealing.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Hero Section**: A welcoming introduction with a dynamic wavy background.
+- **About Section**: Highlights my skills, experience, and GitHub activity.
+- **Contact Section**: Links to my GitHub, LinkedIn, and Dribbble profiles.
+- **Responsive Design**: Optimized for all devices, from mobile to desktop.
+- **Static Export**: Fully static website for easy deployment on shared hosting.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Hosting**: Compatible with shared hosting or platforms like Vercel and Netlify.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+````plaintext
+tio_project/
+├── public/                # Static assets (images, icons, etc.)
+│   ├── assets/
+│   │   ├── images/        # Images used in the project
+│   │   └── icons/         # Icons for buttons and links
+│   └── favicon.ico        # Favicon for the website
+├── src/                   # Source code
+│   ├── app/               # Next.js App Router
+│   ├── components/        # Reusable UI components
+│   ├── sections/          # Page sections (Hero, About, Contact)
+│   ├── styles/            # Global styles
+│   └── utils/             # Utility functions
+├── [next.config.js](http://_vscodecontentref_/1)         # Next.js configuration
+├── [package.json](http://_vscodecontentref_/2)           # Project dependencies
+├── [tsconfig.json](http://_vscodecontentref_/3)          # TypeScript configuration
+└── [README.md](http://_vscodecontentref_/4)              # Project documentation
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/tiosetiawan/tio_project.git
+   cd tio_project
+````
+
+2. **Install Dependencies**:
+   Pastikan Anda sudah menginstal **pnpm**. Jika belum, instal dengan:
+
+   ```bash
+   npm install -g pnpm
+   ```
+
+   Kemudian jalankan:
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run the Development Server**:
+   Untuk menjalankan proyek dalam mode pengembangan:
+
+   ```bash
+   pnpm dev
+   ```
+
+   Akses proyek Anda di [http://localhost:3000](http://localhost:3000).
+
+4. **Build for Production**:
+   Untuk membangun proyek dalam mode produksi:
+
+   ```bash
+   pnpm build
+   ```
+
+5. **Export Static Files**:
+   Jika Anda ingin mengekspor proyek sebagai file statis:
+
+   ```bash
+   pnpm export
+   ```
+
+   File statis akan tersedia di folder `out/`.
+
+6. **Deploy**:
+   Unggah folder `out/` ke hosting Anda (shared hosting, Netlify, Vercel, dll.).
+
+---
+
+## 🌐 Deployment
+
+Proyek ini dapat di-deploy ke berbagai platform hosting, seperti:
+
+- **Shared Hosting**: Unggah folder `out/` ke direktori `public_html` atau subdirektori hosting Anda.
+- **Netlify**: Drag and drop folder `out/` ke dashboard Netlify.
+- **Vercel**: Deploy langsung dari repository GitHub Anda.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this project as long as you include the original license.
