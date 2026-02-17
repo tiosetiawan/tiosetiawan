@@ -49,13 +49,13 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
+    w = ctx.canvas.width = canvas.parentElement?.offsetWidth || window.innerWidth;
+    h = ctx.canvas.height = canvas.parentElement?.offsetHeight || window.innerHeight;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
     window.onresize = function () {
-      w = ctx.canvas.width = window.innerWidth;
-      h = ctx.canvas.height = window.innerHeight;
+      w = ctx.canvas.width = canvas.parentElement?.offsetWidth || window.innerWidth;
+      h = ctx.canvas.height = canvas.parentElement?.offsetHeight || window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
     render();

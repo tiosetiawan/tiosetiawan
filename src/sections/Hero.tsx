@@ -6,47 +6,47 @@ import { WavyBackground } from "@/components/WavyBackground";
 export const Hero = () => {
   return (
     <WavyBackground>
-      <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-        <div className="container">
+      <div className="py-20 md:py-32 lg:py-40 relative z-0 overflow-x-clip w-full">
+        <div className="container px-4 md:px-8">
           {/* Profile Section */}
           <div className="flex flex-col items-center">
             <Image
               src="/assets/images/tio-program.png"
               width={96}
               height={96}
-              className="w-24 h-24 rounded-full"
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full"
               alt="Main Laptop"
             />
-            <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg mt-4">
-              <div className="bg-green-500 w-3 h-3 rounded-full"></div>
-              <div className="text-sm font-medium text-gray-300">
+            <div className="bg-gray-950 border border-gray-800 px-3 py-1.5 md:px-4 md:py-1.5 inline-flex items-center gap-3 md:gap-4 rounded-lg mt-4 text-xs md:text-sm">
+              <div className="bg-green-500 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full"></div>
+              <div className="font-medium text-gray-300">
                 Available for new project
               </div>
             </div>
           </div>
 
           {/* Introduction Section */}
-          <div className="max-w-xl mx-auto text-center mt-8">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold tracking-wide text-white">
+          <div className="max-w-2xl mx-auto text-center mt-6 md:mt-8 px-4">
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-white">
               Hi, I'm Tio Setiawan
             </h1>
-            <p className="mt-4 text-lg text-gray-400">
+            <p className="mt-3 md:mt-4 text-base md:text-lg lg:text-xl text-gray-400">
               A Software Engineer specializing in creating scalable and
               user-friendly software solutions.
             </p>
           </div>
 
           {/* Call-to-Action Buttons */}
-          <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center mt-6 md:mt-8 gap-3 md:gap-4 px-4">
             <a
               href="https://github.com/tiosetiawan"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-gray-700 px-6 h-12 rounded-xl text-gray-300 hover:bg-gray-800 transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-700 px-4 md:px-6 h-10 md:h-12 rounded-xl text-gray-300 hover:bg-gray-800 transition text-sm md:text-base"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
+                className="w-4 h-4 md:w-5 md:h-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -58,7 +58,7 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/tiosetiawan1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-gray-700 bg-white text-gray-900 px-6 h-12 rounded-xl hover:bg-gray-100 transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-700 bg-white text-gray-900 px-4 md:px-6 h-10 md:h-12 rounded-xl hover:bg-gray-100 transition text-sm md:text-base"
             >
               <span>👋🏻</span>
               <span className="font-medium">Let's Connect</span>
