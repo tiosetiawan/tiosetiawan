@@ -1,79 +1,156 @@
+"use client";
+
 import React from "react";
-import { BlurFade } from "@/components/ui/blur-fade";
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Database,
+  Palette,
+  Workflow,
+  Server,
+  Layers,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+
+const skills = [
+  {
+    icon: Server,
+    title: "Backend",
+    description: "PHP (Laravel, CodeIgniter)",
+  },
+  {
+    icon: Layers,
+    title: ".NET",
+    description: "Basic .NET Core knowledge",
+  },
+  {
+    icon: Code2,
+    title: "Frontend",
+    description: "CSS (Bootstrap, TailwindCSS)",
+  },
+  {
+    icon: Database,
+    title: "Database",
+    description: "SQL Server & MySQL",
+  },
+  {
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Figma",
+  },
+  {
+    icon: Workflow,
+    title: "Business Flow",
+    description: "Draw.io",
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.1 * i, duration: 0.5, ease: "easeOut" },
+  }),
+};
 
 const About = () => {
   return (
-    <section id="about" className="py-16 px-6  text-white">
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        {/* Left Side: GitHub Activity */}
-        <BlurFade delay={0.25} inView>
-          <div className="flex flex-col items-center container">
-            <h3 className="text-2xl font-bold mb-4">GitHub Contributions</h3>
-            <iframe
-              src="https://ghchart.rshah.org/tiosetiawan"
-              title="GitHub Contributions"
-              className="w-full h-64 rounded-lg shadow-lg bg-black"
-              frameBorder="0"
-            ></iframe>
-            <p className="mt-4 text-sm text-gray-400">
-              *Contributions in the last year
-            </p>
-          </div>
-        </BlurFade>
-
-        {/* Right Side: About Content */}
-        <BlurFade delay={0.5} inView>
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Hello World 👋
+    <section id="about" className="py-24 md:py-32">
+      <div className="container">
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            custom={0}
+            variants={fadeUp}
+            className="text-center mb-16"
+          >
+            <Badge variant="secondary" className="mb-4">
+              About Me
+            </Badge>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              Hello World <span>👋</span>
             </h2>
-            <p className="mt-4 text-lg text-gray-400 sm:text-xl">
-              I am a{" "}
-              <span className="font-semibold text-white">
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+              I&apos;m a{" "}
+              <span className="font-medium text-foreground">
                 Software Engineer
               </span>{" "}
-              with expertise in building scalable and user-friendly
-              applications. My skills include:
+              passionate about crafting digital experiences that make a
+              difference. Here&apos;s what I bring to the table.
             </p>
-            <ul className="mt-6 text-lg text-gray-400 sm:text-xl list-disc list-inside">
-              <li>
-                Backend Development with{" "}
-                <span className="font-semibold text-white">
-                  PHP (Laravel, CodeIgniter)
-                </span>
-              </li>
-              <li>
-                Basic knowledge of{" "}
-                <span className="font-semibold text-white">.NET Core</span>
-              </li>
-              <li>
-                Frontend styling with{" "}
-                <span className="font-semibold text-white">
-                  CSS (Bootstrap, TailwindCSS)
-                </span>
-              </li>
-              <li>
-                Database management using{" "}
-                <span className="font-semibold text-white">SQL Server</span> and{" "}
-                <span className="font-semibold text-white">MySQL</span>
-              </li>
-              <li>
-                UI/UX Design using{" "}
-                <span className="font-semibold text-white">Figma</span>
-              </li>
-              <li>
-                Business Flow Design with{" "}
-                <span className="font-semibold text-white">Draw.io</span>
-              </li>
-            </ul>
-            <a
-              href="mailto:tioapp28@gmail.com"
-              className="mt-4 text-sm font-medium text-white"
-            >
-              📧 tioapp28@gmail.com
-            </a>
+          </motion.div>
+
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+            {skills.map((skill, i) => (
+              <motion.div
+                key={skill.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-80px" }}
+                custom={i + 1}
+                variants={fadeUp}
+              >
+                <Card className="group h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <skill.icon className="size-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground">
+                          {skill.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {skill.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
-        </BlurFade>
+
+          <Separator className="mb-16" />
+
+          {/* GitHub Chart */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            custom={0}
+            variants={fadeUp}
+            className="text-center"
+          >
+            <Badge variant="secondary" className="mb-4">
+              Open Source
+            </Badge>
+            <h3 className="text-xl font-bold tracking-tight mb-8">
+              GitHub Contributions
+            </h3>
+            <Card className="overflow-hidden">
+              <CardContent className="p-2 sm:p-4">
+                <iframe
+                  src="https://ghchart.rshah.org/38bdf8/tiosetiawan"
+                  title="GitHub Contributions"
+                  className="w-full h-[120px] sm:h-[140px] rounded-lg"
+                  frameBorder="0"
+                  loading="lazy"
+                />
+              </CardContent>
+            </Card>
+            <p className="mt-3 text-xs text-muted-foreground">
+              *Contributions in the last year
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

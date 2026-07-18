@@ -10,28 +10,53 @@ export default {
   ],
   theme: {
     screens: {
-      sm: "375px",
+      xs: "375px",
+      sm: "640px",
       md: "768px",
-      lg: "1200px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1440px",
     },
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
+        DEFAULT: "1.25rem",
+        sm: "1.5rem",
         md: "2rem",
+        lg: "2.5rem",
+        xl: "3rem",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1340px",
       },
     },
     extend: {
       fontFamily: {
-        sans: "var(--font-sans)",
-        serif: "var(--font-serif)",
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       animation: {
         marquee: "marquee var(--duration, 30s) linear infinite",
+        "marquee-reverse":
+          "marquee var(--duration, 30s) linear infinite reverse",
+        "fade-in": "fadeIn 0.5s ease-out",
+        "slide-up": "slideUp 0.5s ease-out",
       },
       keyframes: {
         marquee: {
           to: { transform: "translateX(-50%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       borderRadius: {
@@ -70,21 +95,16 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
       },
-      // backgroundImage: {
-      // 	'grid-pattern': ',
-      // 	'grid-pattern-light': '
-      // }
     },
   },
   plugins: [require("tailwindcss-animate")],

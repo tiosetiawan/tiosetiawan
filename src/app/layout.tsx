@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/lib/utils";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"], // Tambahkan berat font sesuai kebutuhan
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "tiosetiawan.com",
-  description: "Website Tio",
+  title: "Tio Setiawan — Software Engineer",
+  description:
+    "Software Engineer specializing in building scalable, user-friendly web applications.",
+  openGraph: {
+    title: "Tio Setiawan — Software Engineer",
+    description:
+      "Software Engineer specializing in building scalable, user-friendly web applications.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -20,11 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark scroll-smooth">
       <body
-        className={twMerge(
-          poppins.variable,
-          "bg-black text-white antialiased font-sans"
+        className={cn(
+          inter.variable,
+          "min-h-screen bg-background font-sans text-foreground antialiased",
+          // Tech grid: dots + circuit lines, responsive
+          "before:fixed before:inset-0 before:z-0",
+          "before:bg-tech-grid",
+          "before:[mask-image:radial-gradient(ellipse_at_top,black_40%,transparent_80%)]",
+          "before:pointer-events-none",
         )}
       >
         {children}
