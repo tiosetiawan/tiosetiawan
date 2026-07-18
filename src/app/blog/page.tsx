@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function BlogListPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative z-10 min-h-screen bg-background">
       {/* Nav */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
         <div className="container flex h-14 items-center">
@@ -26,7 +26,7 @@ export default function BlogListPage() {
         </div>
       </div>
 
-      <div className="container max-w-4xl pt-24 pb-24">
+      <div className="container max-w-4xl pt-28 pb-24">
         {/* Header */}
         <div className="mb-14">
           <Badge variant="secondary" className="mb-4">
