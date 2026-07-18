@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="relative z-10 min-h-screen bg-background">
+    <div className="relative z-10 min-h-screen">
       {/* Navigation Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
         <div className="container flex h-14 items-center justify-between">
