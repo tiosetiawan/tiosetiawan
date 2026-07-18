@@ -3,6 +3,7 @@ import { Hero } from "@/sections/Hero";
 import { Skill } from "@/sections/Skill";
 import { ProjectsSection } from "@/sections/Projects";
 import About from "@/sections/About";
+import { Blog } from "@/sections/Blog";
 import Contact from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { SectionGlow } from "@/components/SectionGlow";
@@ -29,6 +30,13 @@ export default function Home() {
       <div className="relative">
         <SectionGlow position="top" color="emerald" />
         <ProjectsSection />
+        <SectionGlow position="bottom" color="cyan" />
+      </div>
+
+      {/* Blog + Glows */}
+      <div className="relative">
+        <SectionGlow position="top" color="cyan" />
+        <Blog />
         <SectionGlow position="bottom" color="purple" />
       </div>
 
@@ -36,12 +44,12 @@ export default function Home() {
       <div className="relative">
         <SectionGlow position="top" color="purple" />
         <About />
-        <SectionGlow position="bottom" color="cyan" />
+        <SectionGlow position="bottom" color="emerald" />
       </div>
 
       {/* Contact + Top Glow */}
       <div className="relative">
-        <SectionGlow position="top" color="cyan" />
+        <SectionGlow position="top" color="emerald" />
         <Contact />
       </div>
 

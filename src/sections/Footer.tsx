@@ -36,7 +36,7 @@ export const Footer = () => {
           <div className="text-center">
             <a
               href="#home"
-              className="text-xl font-bold tracking-tight hover:text-primary transition-colors"
+              className="text-xl font-bold tracking-tight hover:text-cyan-300 transition-colors"
             >
               Tio<span className="text-primary">.</span>
             </a>

@@ -53,16 +53,16 @@ export const Header = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          scrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/10"
-            : "bg-transparent",
+          "bg-background/60 backdrop-blur-md",
+          scrolled &&
+            "bg-background/85 backdrop-blur-xl border-b border-border shadow-lg shadow-black/10",
         )}
       >
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
-            className="text-lg font-bold tracking-tight hover:text-primary transition-colors"
+            className="text-lg font-bold tracking-tight hover:text-cyan-300 transition-colors"
           >
             Tio<span className="text-primary">.</span>
           </a>
