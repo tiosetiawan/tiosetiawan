@@ -104,7 +104,7 @@ export const Hero = () => {
               className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
             >
               <Button
-                variant="wavy"
+                variant="wavy-outline"
                 size="lg"
                 onClick={() =>
                   window.open(

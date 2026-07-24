@@ -82,7 +82,7 @@ export const Header = () => {
                       : "text-muted-foreground hover:text-white",
                   )}
                 >
-                  {isActive && (
+                  {/* {isActive && (
                     <motion.span
                       layoutId="nav-active"
                       className="absolute inset-0 bg-white/10 rounded-full"
@@ -92,7 +92,7 @@ export const Header = () => {
                         damping: 30,
                       }}
                     />
-                  )}
+                  )} */}
                   <span className="relative z-10">{item.label}</span>
                 </a>
               );
@@ -101,7 +101,7 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="wavy" size="sm" asChild>
+            <Button variant="wavy-outline" size="sm" asChild>
               <a href="#contact">Get in Touch</a>
             </Button>
           </div>
@@ -180,7 +180,7 @@ export const Header = () => {
               </nav>
 
               <div className="mt-8 pt-6 border-t border-border">
-                <Button variant="wavy" className="w-full" asChild>
+                <Button variant="wavy-outline" className="w-full" asChild>
                   <a href="#contact" onClick={closeMobile}>
                     Get in Touch
                   </a>
